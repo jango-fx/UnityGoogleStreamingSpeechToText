@@ -32,6 +32,7 @@ namespace GoogleCloudStreamingSpeechToText {
             }
         }
 
+        public string languageCode = "en";
         public bool startOnAwake = true;
         public bool returnInterimResults = true;
         public bool enableDebugLogging = false;
@@ -290,7 +291,7 @@ namespace GoogleCloudStreamingSpeechToText {
                     Config = new RecognitionConfig() {
                         Encoding = RecognitionConfig.Types.AudioEncoding.Linear16,
                         SampleRateHertz = audioConfiguration.sampleRate,
-                        LanguageCode = "en",
+                        LanguageCode = languageCode,
                         MaxAlternatives = 1
                     },
                     InterimResults = returnInterimResults,

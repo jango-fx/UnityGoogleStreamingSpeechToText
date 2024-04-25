@@ -15,6 +15,7 @@ namespace GoogleCloudStreamingSpeechToText {
 
             serializedObject.Update();
 
+            SerializedProperty languageCode = serializedObject.FindProperty("languageCode");
             SerializedProperty startOnAwake = serializedObject.FindProperty("startOnAwake");
             SerializedProperty returnInterimResults = serializedObject.FindProperty("returnInterimResults");
             SerializedProperty enableDebugLogging = serializedObject.FindProperty("enableDebugLogging");
@@ -34,6 +35,7 @@ namespace GoogleCloudStreamingSpeechToText {
             listener.microphoneName =
                 microphoneNames[EditorGUILayout.Popup("Microphone", microphoneIndex, microphoneNames)];
 
+            EditorGUILayout.PropertyField(languageCode);
             EditorGUILayout.PropertyField(startOnAwake);
             EditorGUILayout.PropertyField(returnInterimResults);
             EditorGUILayout.PropertyField(enableDebugLogging);
